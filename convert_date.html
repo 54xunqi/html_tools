@@ -1,0 +1,26 @@
+<!DOCTYPE html> 
+<html>
+<body>
+
+<h2>时间戳转换工具</h2>
+
+<label for="timestamp">输入时间戳(毫秒):</label>
+<input type="number" id="timestamp" name="timestamp">
+
+<button onclick="convert()">转换</button>
+
+<p id="result"></p>
+
+<script>
+function convert() {
+  var ts = document.getElementById("timestamp").value;
+  var date = new Date(ts); 
+  var result = "UTC 时间: " + date.toUTCString() + "<br>";
+  result += "ISO 时间: " + date.toISOString() + "<br>";  
+  result += "本地时间: " + date.toString();
+  document.getElementById("result").innerHTML = result;
+}  
+</script>
+
+</body>
+</html>
